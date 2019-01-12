@@ -32,15 +32,7 @@ public class BankingOperationsResource {
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getBankingOperations() {
 		BankingOperationsServiceImpl bankingOperationsServiceImpl = new BankingOperationsServiceImpl();
-		
-		logger.info("Start method :  convertDataFromExcelToList");
-
-		// dsdsdList<BankingOperationsEntity> bankingOperations = bankingOperationsServiceImpl.convertDataFromExcelToList();
-		logger.info("toto");
-		logger.info("End method :  convertDataFromExcelToList");
-		logger.info("toto");
-		// szszszbankingOperatszszionsServiceImpl.dataBaseAccessExample();
-		
+		logger.info("Start method :  convertDataFromExcelToList");		
 		return Response
 				.ok(bankingOperationsServiceImpl.convertDataFromExcelToList())
 				.header("Access-Control-Allow-Origin", "*")
@@ -52,16 +44,10 @@ public class BankingOperationsResource {
 	@Path(FacadeUrlConst.CATEGORIES_PATH)
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getCategories() {
-		BankingOperationsServiceImpl bankingOperationsServiceImpl = new BankingOperationsServiceImpl();
-		
+		BankingOperationsServiceImpl bankingOperationsServiceImpl = new BankingOperationsServiceImpl();		
 		logger.info("Start method :  convertDataFromExcelToList");
-
-		List<CategoriesEntity> categories = bankingOperationsServiceImpl.getCategories();
-		
-		logger.info("End method :  convertDataFromExcelToList");
-		
 		return Response
-				.ok(categories)
+				.ok(bankingOperationsServiceImpl.getCategories())
 				.header("Access-Control-Allow-Origin", "*")
 				.header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT")
 				.build();
