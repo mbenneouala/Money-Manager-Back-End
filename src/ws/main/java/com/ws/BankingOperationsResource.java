@@ -46,7 +46,7 @@ public class BankingOperationsResource {
 	public Response getCategories() {
 		BankingOperationsServiceImpl bankingOperationsServiceImpl = new BankingOperationsServiceImpl();		
 		logger.info("Start method :  convertDataFromExcelToList");
-		//sqsqs
+		//sqsqsxxzsz
 		return Response
 				.ok(bankingOperationsServiceImpl.getCategories())
 				.header("Access-Control-Allow-Origin", "*")
